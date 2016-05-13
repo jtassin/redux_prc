@@ -1,4 +1,5 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require('webpack');
 
 var path = require("path");
 module.exports = {
@@ -27,5 +28,5 @@ module.exports = {
             template: 'src/index.html',
             title: "React PRC Starter kit"
         }
-    )],
+    ), new webpack.HotModuleReplacementPlugin()],
 };

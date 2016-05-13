@@ -20,6 +20,7 @@ Create index.html
 ## Step 1 - React Naif
 ```bash
 npm i react react-dom --save
+npm install --save-dev react-hot-loader
 ```
 
 Instanciation d'un composant
