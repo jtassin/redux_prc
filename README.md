@@ -24,3 +24,9 @@ npm install --save-dev react-hot-loader
 ```
 
 Instanciation d'un composant
+
+## Step 2 - React + Redux
+
+```sh
+npm i react-redux redux --save
+```
