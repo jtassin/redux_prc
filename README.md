@@ -29,4 +29,12 @@ Instanciation d'un composant
 
 ```sh
 npm i react-redux redux --save
+npm i --save redux-logger
+npm i --save redux-thunk
 ```
+
+Création service Model
+création store
+création reducers
+création actions
+
