@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/jtassin/redux_prc#readme",
   "dependencies": {
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
   },
