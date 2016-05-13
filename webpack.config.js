@@ -10,11 +10,8 @@ module.exports = {
             {test: /\.scss$/, loaders: ["style", "css", "sass"]},
             {
                 test: /.jsx?$/,
-                loader: 'babel-loader',
+                loaders: ['react-hot', 'babel-loader?presets[]=es2015,presets[]=react,presets[]=stage-0'],
                 exclude: /node_modules/,
-                query: {
-                    presets: ['es2015', 'react', 'stage-0']
-                }
             },
             {test: /\.(png|woff|woff2|eot|ttf|svg|swf|jpg|jpeg|gif)$/, loader: 'url-loader?limit=100000'},
         ]
