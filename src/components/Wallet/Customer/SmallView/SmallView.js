@@ -12,7 +12,7 @@ class SmallView extends React.Component {
     }
     
     render() {
-        return <span>{this.state.customer.firstname}</span>;
+        return <span><strong>#{this.state.customer.id}</strong> - {this.state.customer.firstname}</span>;
     }
 }
 
