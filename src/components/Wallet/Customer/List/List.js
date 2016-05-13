@@ -17,7 +17,6 @@ function mapStateToProps(state, ownProps) {
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    console.log(ownProps);
     return {
         start: () => dispatch(executeQuery(ownProps.filter)),
     };
@@ -35,7 +34,9 @@ class List extends React.Component {
     }
 
     componentWillMount() {
-        this.props.start();
+        if(this.props.ids.length === 0) {
+            this.props.start();    
+        }
     }
     
     render() {
