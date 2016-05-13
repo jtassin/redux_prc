@@ -16,3 +16,10 @@ Create webpack.config.js
 
 Create main.js
 Create index.html
+
+## Step 1 - React Naif
+```bash
+npm i react react-dom --save
+```
+
+Instanciation d'un composant
