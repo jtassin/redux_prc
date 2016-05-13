@@ -38,3 +38,9 @@ création store
 création reducers
 création actions
 
+## Step 3 - Edition + multiples Listes
+
+```sh 
+npm i --save deep-equal
+```
+

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/jtassin/redux_prc#readme",
   "dependencies": {
+    "deep-equal": "^1.0.1",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
     "react-redux": "^4.4.5",

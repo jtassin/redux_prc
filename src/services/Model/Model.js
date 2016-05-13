@@ -1,3 +1,5 @@
+import deepEqual  from 'deep-equal';
+
 export class Filter {
     constructor(module, entity, query, pagination, sort) {
         this.module = module;
@@ -12,7 +14,7 @@ export class Filter {
     }
     
     equals(filter) {
-        return true;
+        return deepEqual(this, filter);
     }
 }
 
@@ -24,8 +26,14 @@ class Model {
     query(filter) {
         const result = new Promise((resolve, reject) => {
             setTimeout(() => {
-                const customers = [{firstname: 'customer1', id: 1}, {firstname: 'customer2', id: 2}, {firstname: 'customer3', id: 3}];
-                resolve(customers);
+                if(filter.query.id === '>1') {
+                    const customers = [{firstname: 'customer2', id: 2}, {firstname: 'customer3', id: 3}];
+                    resolve(customers);    
+                } else {
+                    const customers = [{firstname: 'customer1', id: 1}, {firstname: 'customer2', id: 2}, {firstname: 'customer3', id: 3}];
+                    resolve(customers);
+                }
+                
             }, 500);
         });
         return result;

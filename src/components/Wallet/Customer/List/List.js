@@ -5,18 +5,15 @@ import { connect } from 'react-redux';
 
 
 function mapStateToProps(state, ownProps) {
-    let customers = [];
+    let ids = [];
     if(state.model.search[ownProps.filter.hashCode()]) {
         state.model.search[ownProps.filter.hashCode()].forEach((search) => {
             if(search.filter.equals(ownProps.filter)) {
-                search.ids.forEach((id) => {
-                    customers.push(state.model.items[ownProps.filter.module][ownProps.filter.entity][id]);
-                });
+                ids = search.ids;
             }
         });
     }
-    console.log(customers);
-    return { customers: customers };
+    return { ids: ids };
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -29,7 +26,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 class List extends React.Component {
 
     static propTypes = {
-        customers: PropTypes.array.isRequired,
+        ids: PropTypes.array.isRequired,
         filter: PropTypes.object.isRequired,
     };
 
@@ -42,8 +39,8 @@ class List extends React.Component {
     }
     
     render() {
-        const customersRepresentation = this.props.customers.map((customer) => {
-            return <li key={customer.id}><SmallView customer={customer}/></li>
+        const customersRepresentation = this.props.ids.map((id) => {
+            return <li key={id}><SmallView id={id.toString()}/></li>
         });
         return <ul>{customersRepresentation}</ul>;
     }
