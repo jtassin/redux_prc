@@ -1,11 +1,11 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import {SmallView as CustomerSmallView} from './components/Wallet/Customer';
+import {List as CustomerList} from './components/Wallet/Customer';
 
 console.log("Application Starting");
 
-const customer = {firstname: 'customer1'};
+const customers = [{firstname: 'customer1', id: 1}, {firstname: 'customer2', id: 2}, {firstname: 'customer3', id: 3}];
 
-ReactDOM.render(<CustomerSmallView customer={customer}/>, document.getElementById('content'));
+ReactDOM.render(<CustomerList customers={customers}/>, document.getElementById('content'));
 
 console.log("Application Started");
